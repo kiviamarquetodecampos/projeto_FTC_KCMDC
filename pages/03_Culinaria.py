@@ -175,10 +175,10 @@ with st.container():
     melhor, pior = st.columns(2)
     with melhor:
         df_aux = df_paises.loc[:, ["cuisines", "aggregate_rating", "restaurant_id"]].groupby("cuisines").mean().sort_values(["aggregate_rating", "restaurant_id"], ascending=[False,True]).reset_index().head(qtde_rest)
-        fig = px.bar(df_aux, x="cuisines", y="aggregate_rating", title=f"Os {qtde_rest} melhores tipos de Culinária por País", labels = {"cuisines": "Tipos de Culinária", "aggregate_rating": "Média de Avaliação"})
+        fig = px.bar(df_aux, x="cuisines", y="aggregate_rating", title=f"Os {qtde_rest} melhores tipos de Culinária por Países Selecionados", labels = {"cuisines": "Tipos de Culinária", "aggregate_rating": "Média de Avaliação"})
         st.plotly_chart(fig, use_container_width=True)
     
     with pior:
         df_aux = df_paises.loc[:, ["cuisines", "aggregate_rating", "restaurant_id"]].groupby("cuisines").mean().sort_values(["aggregate_rating", "restaurant_id"], ascending=[True,True]).reset_index().head(qtde_rest)
-        fig = px.bar(df_aux, x="cuisines", y="aggregate_rating", title=f"Os {qtde_rest} piores tipos de Culinária por País", labels = {"cuisines": "Tipos de Culinária", "aggregate_rating": "Média de Avaliação"})
+        fig = px.bar(df_aux, x="cuisines", y="aggregate_rating", title=f"Os {qtde_rest} piores tipos de Culinária por Países Selecionados", labels = {"cuisines": "Tipos de Culinária", "aggregate_rating": "Média de Avaliação"})
         st.plotly_chart(fig, use_container_width=True)
