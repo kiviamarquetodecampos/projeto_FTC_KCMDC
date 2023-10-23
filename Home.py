@@ -10,8 +10,6 @@ from streamlit_folium import folium_static
 import inflection
 import numpy as np
 
-#from utils import dados_totais as dt
-
 st.set_page_config(page_title="Home", page_icon="📊", layout="wide")
 
 #===============================================================
